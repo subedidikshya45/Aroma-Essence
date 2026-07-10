@@ -1,4 +1,3 @@
-HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1367,9 +1366,613 @@ HTML
             width: 100%;
             height: 100%;
             object-fit: cover;
-            max-height: 50
+            max-height: 500px;
+        }
+
+        .modal-right {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .modal-right .product-category { margin-bottom: 10px; }
+        .modal-right h3 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .modal-right .modal-price {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .modal-right .modal-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        /* Toasts System */
+        .toast-container {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast-notification {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(-120%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        /* ==========================================
+           12. RESPONSIVE MEDIA BREAKPOINTS
+           ========================================== */
+        @media (max-width: 1200px) {
+            :root { --container-padding: 0 5%; }
+            .section-title h2 { font-size: 2.6rem; }
+            .products-grid { grid-template-columns: repeat(3, 1fr); }
+            .story-split { gap: 40px; }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu { display: none; } /* Handled by mobile menu integration */
+            .menu-toggle { display: block; }
+            .hero-title { font-size: 3.2rem; }
+            .basics-grid { grid-template-columns: 1fr; gap: 25px; }
+            .story-split { flex-direction: column; gap: 50px; }
+            .story-img-main { width: 100%; height: 400px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .product-modal { flex-direction: column; width: 85%; }
+            .modal-right { padding: 30px; }
+            .modal-left img { max-height: 300px; }
+        }
+
+        @media (max-width: 576px) {
+            .announcement-bar { font-size: 0.65rem; padding: 6px 10px; }
+            header { top: 27px; padding: 15px 0; }
+            .logo { font-size: 1.8rem; }
+            .hero-title { font-size: 2.4rem; }
+            .hero-description { font-size: 0.9rem; }
+            .hero-btn-group { flex-direction: column; gap: 12px; }
+            .section-title h2 { font-size: 2rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .filter-tabs { flex-wrap: wrap; gap: 10px; }
+            .contact-form-container { padding: 30px 20px; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+            .cart-drawer { width: 100%; right: -100%; }
+            .drawer-overlay.open .cart-drawer { transform: translateX(-100%); }
+            .testimonial-text { font-size: 1.2rem; }
+        }
+
+        /* Mobile Slide Menu styling overlay overlay */
+        .mobile-nav {
+            position: fixed;
+            top: 0; left: -100%; width: 80%; max-width: 300px; height: 100%;
+            background-color: var(--secondary-color);
+            z-index: 2500;
+            padding: 40px 30px;
+            box-shadow: 10px 0 40px rgba(0,0,0,0.05);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .mobile-nav.open { left: 0; }
+        .mobile-nav-close { align-self: flex-end; font-size: 1.3rem; cursor: pointer; }
+        .mobile-menu-links { display: flex; flex-direction: column; gap: 20px; margin-top: 20px; }
+        .mobile-menu-links a { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        Complimentary Signature Sample Box with all orders above Rs. 5,000. Ships across Nepal.
+    </div>
+
+    <header id="main-header">
+        <div class="container nav-container">
+            <div class="menu-toggle" id="mobile-menu-open">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+
+            <a href="#" class="logo">AURA<span>.</span></a>
+
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#basics" class="nav-link">Basics</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#faqs" class="nav-link">FAQs</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="header-icon-btn" id="cart-toggle-btn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cart-icon-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav-drawer">
+        <div class="mobile-nav-close" id="mobile-menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="#hero" class="mobile-link">Home</a>
+            <a href="#basics" class="mobile-link">Basics</a>
+            <a href="#products" class="mobile-link">Products</a>
+            <a href="#testimonials" class="mobile-link">Reviews</a>
+            <a href="#faqs" class="mobile-link">FAQs</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+
+
+    <section id="hero">
+        <div class="hero-slide active">
+            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1600')"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-subtitle">The Art of Alchemy</span>
+                    <h1 class="hero-title">Ethereal Fragrances Custom Designed</h1>
+                    <p class="hero-description">Discover curated collections of artisanal perfumes and sensory rich aroma essence oils formulated to harmonize your immediate environment and uplift your soul.</p>
+                    <div class="hero-btn-group">
+                        <a href="#products" class="btn btn-primary">Explore Products</a>
+                        <a href="#basics" class="btn btn-outline">Our Philosophy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=1600')"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-subtitle">100% Pure Botanical Compounds</span>
+                    <h1 class="hero-title">Nature’s Most Potent Aroma Essences</h1>
+                    <p class="hero-description">Pure botanical extractions ethically harvested and precisely blended. Bring calm, vigor, and deep elemental peace into your private residence or workspace.</p>
+                    <div class="hero-btn-group">
+                        <a href="#products" class="btn btn-primary">Shop Essences</a>
+                        <a href="#contact" class="btn btn-outline">Visit Studio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=1600')"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-subtitle">Crafted Locally in Rupandehi</span>
+                    <h1 class="hero-title">Butwal’s Premiere Luxury Olfactive House</h1>
+                    <p class="hero-description">Bridging ancient global aroma traditions with modern design practices. Experience premium retail scent formulation tailored exclusively for the Himalayan lifestyle.</p>
+                    <div class="hero-btn-group">
+                        <a href="#products" class="btn btn-primary">View Collection</a>
+                        <a href="#faqs" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-arrow slider-arrow-prev" id="hero-prev"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="slider-arrow slider-arrow-next" id="hero-next"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <div class="slider-dots" id="hero-dots-container"></div>
+    </section>
+
+
+    <section id="basics" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <span>Core Fundamentals</span>
+                <h2>The Aura Scent Philosophy</h2>
+                <p>We craft more than perfumes; we design unseen architectures that capture memories, alter psychological moods, and formulate strong personal definitions.</p>
+            </div>
+
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Artisanal Formulation</h3>
+                    <p>Every single batch is processed by hand in limited cycles. We coordinate base, heart, and top notes down to micro-milligrams to construct beautiful olfactive longevity profiles.</p>
+                </div>
+
+                <div class="basic-card">
+                    <div class="basic-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Conscious Elements</h3>
+                    <p>We source raw materials responsibly across indigenous micro-farms. Zero parabens, no synthetic coloring elements, and completely cruelty-free production parameters.</p>
+                </div>
+
+                <div class="basic-card">
+                    <div class="basic-icon">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3>Bespoke Master Craft</h3>
+                    <p>Our bottles and heavy-base protective packaging systems mirror the structural refinement of high art, making them exquisite centerpieces for any modern dresser.</p>
+                </div>
+            </div>
+
+            <div class="story-split">
+                <div class="story-img-container">
+                    <img src="https://images.unsplash.com/photo-1615655404745-a10d245f4351?auto=format&fit=crop&q=80&w=800" alt="Perfume Raw Materials" class="story-img-main">
+                    <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&q=80&w=600" alt="Distillation Apparatus" class="story-img-secondary">
+                </div>
+                <div class="story-content">
+                    <span>The Origin Story</span>
+                    <h3>Rooted in Tranquility, Engineered for Sophistication.</h3>
+                    <p>Established within the industrial and cultural confluence of Butwal, Rupandehi, AURA emerged from a passionate pursuit to redefine localized luxury products within Nepal. Our operations emphasize scientific precision mixed with botanical heritage.</p>
+                    <p>By studying classical vapor distillation styles along with state-of-the-art molecular extraction, our scent artists structure rich profiles that interact uniquely with natural skin warmth over several hours.</p>
+                    
+                    <div class="story-meta">
+                        <div class="meta-item">
+                            <h4>12+</h4>
+                            <p>Signature Profiles</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>100%</h4>
+                            <p>Pure Essence Bases</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>4.9★</h4>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="products" class="section-padding" style="background-color: #f5f2ed; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-title text-center">
+                <span>The Vault</span>
+                <h2>Curated Master Blends</h2>
+                <p>Browse our hand-selected line of high-concentration Eau de Parfums and premium botanical therapeutic aroma room essences.</p>
+            </div>
+
+            <div class="filter-tabs">
+                <div class="filter-btn active" data-filter="all">All Items</div>
+                <div class="filter-btn" data-filter="perfume">Fine Perfumes</div>
+                <div class="filter-btn" data-filter="essence">Aroma Essences</div>
+                <div class="filter-btn" data-filter="seasonal">Seasonal Limited</div>
+            </div>
+
+            <div class="products-grid" id="catalog-products-container">
+                </div>
+        </div>
+    </section>
+
+
+    <section class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1600')">
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h3>Scent Customization Atelier</h3>
+            <p>Seeking an individualized olfactory marker? Schedule a private single session reservation with our master blender in Butwal studio to build a signature profile explicitly tailored for you.</p>
+            <a href="#contact" class="btn btn-accent">Request Consultation</a>
+        </div>
+    </section>
+
+
+    <section id="testimonials" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <span>Voices of Aura</span>
+                <h2>Refined Endorsements</h2>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <div class="testimonial-item active">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The Royal Oud Wood Eau de Parfum lasts for an outstanding 10+ hours on my linen shirts. The complex projection transition from strong saffron down to warm base wood vanilla notes is exceptional."</p>
+                    <div class="testimonial-author">Prashant Thapa <span>– Butwal-11</span></div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Using the Pure Himalayan Lavender Aroma Essence inside my studio diffuser completely changed my evening routine. It creates an incredibly relaxing space for decompression."</p>
+                    <div class="testimonial-author">Anjali Shrestha <span>– Kathmandu (Online Order)</span></div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Luxury at par with Western olfactive houses, yet retaining a beautiful distinct regional character. The packaging details make it the perfect wedding or corporate gift alternative."</p>
+                    <div class="testimonial-author">Niranjan Shrestha <span>– Milan Chowk, Butwal</span></div>
+                </div>
+            </div>
+
+            <div class="testimonial-dots" id="testimonial-dots-container"></div>
+        </div>
+    </section>
+
+
+    <section id="faqs" class="section-padding" style="background-color: #faf9f6; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="faq-grid">
+                <div>
+                    <div class="section-title">
+                        <span>Queries Answered</span>
+                        <h2>Frequently Clarified Specifics</h2>
+                        <p>Have operational queries regarding application profiles, longevity indices, shipping methods, or localized custom modifications?</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1528740561666-dc2479bd0dcf?auto=format&fit=crop&q=80&w=700" alt="Elegance Spray" style="box-shadow: 0 10px 30px rgba(0,0,0,0.04); height: 350px; width: 100%; object-fit: cover;">
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h4>What is the typical projection duration of your Eau de Parfums?</h4>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>Our fine fragrance collections feature an industry-leading concentration factor of 18% to 23% pure oils. Under normal conditions across Rupandehi, standard projection holds between 6 to 9 full hours based on chemical interactions with individual skin oil profiles.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h4>How should the Aroma Essences be optimally diffused?</h4>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>For ultrasonic cool-mist humidifiers, mix 4 to 7 drops into 200ml of clean filtered water. For classic candle-heated oil burners, add 3 drops diluted into warm water directly atop the ceramic dish assembly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h4>Do you offer physical sampling before bulk corporate procurement?</h4>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>Yes, absolutely. Clients are cordially welcome to visit our studio storefront layout directly in Butwal to sample everything. Alternatively, we dispatch physical discovery sample boxes via local express courier networks to your address.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h4>Are your formulations skin-safe for sensitive dermatological profiles?</h4>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>All AURA products rely completely on premium sugarcane alcohol vectors and organic scent extractions. We intentionally omit phthalates, synthetic chemical stabilizers, and sulfates. We advise a localized tiny inner wrist patch test prior to full daily usage.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h4>What are your delivery parameters outside the Lumbini area?</h4>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>We provide full courier delivery across all primary hubs within Nepal (including Kathmandu, Pokhara, Chitwan, Biratnagar, and Nepalgunj) with localized door delivery fulfilled within 2 to 4 business handling days.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info-panel">
+                    <div class="contact-panel-title">
+                        <h3>Connect With Us</h3>
+                        <p>Drop by our storefront studio or contact our customer support line for instant assistance with orders.</p>
+                    </div>
+
+                    <div class="contact-details-list">
+                        <div class="contact-detail-card">
+                            <div class="cd-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="cd-text">
+                                <h5>Our Main Studio Location</h5>
+                                <p>Aura Olfactive House,<br>Amarpath, Butwal-04,<br>Rupandehi, Lumbini, Nepal</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-card">
+                            <div class="cd-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="cd-text">
+                                <h5>Instant Call / WhatsApp Support</h5>
+                                <p><a href="tel:+9779857036578">+977 9857036578</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-card">
+                            <div class="cd-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="cd-text">
+                                <h5>Corporate Mailing Inbox</h5>
+                                <p><a href="mailto:info@aurascent.com.np">info@aurascent.com.np</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-card">
+                            <div class="cd-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div class="cd-text">
+                                <h5>Studio Storefront Hours</h5>
+                                <p>Sunday – Friday: 10:00 AM – 7:30 PM<br>Saturday: By Appointment Only</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <h4>Digital Networks</h4>
+                        <div class="contact-social-icons">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="main-contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Your Full Name *</label>
+                                <input type="text" id="form-name" class="form-control" placeholder="e.g. Ramesh Thapa" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email Address *</label>
+                                <input type="email" id="form-email" class="form-control" placeholder="e.g. ramesh@gmail.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-phone">Mobile Line *</label>
+                                <input type="tel" id="form-phone" class="form-control" placeholder="e.g. +977 98XXXXXXXX" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-intent">Primary Inquiry Intent</label>
+                                <select id="form-intent" class="form-control">
+                                    <option value="retail">General Retail Purchase</option>
+                                    <option value="bespoke">Bespoke Custom Blend Session</option>
+                                    <option value="wholesale">Corporate Wholesale Procurement</option>
+                                    <option value="feedback">Feedback & Suggestions</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message">Elaborate Your Message Requirements *</label>
+                            <textarea id="form-message" class="form-control" placeholder="Tell us about your fragrance preferences, or any specific questions you have..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">Transmit Secure Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31388836511!2d83.42436153063546!3d27.701201509983424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996864275d21481%3A0xad2fe2d20ed9fb94!2sButwal!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>AURA<span>.</span></h3>
+                    <p>An exquisite olfactive sanctuary formulating high-concentration artisan perfumes and pristine aroma botanical essences within Butwal, Rupandehi, Nepal.</p>
+                    <p style="font-size: 0.8rem; color: #555;"><i class="fa-solid fa-shield-halved" style="margin-right: 8px;"></i> Verified Official Scent House Hub</p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <div class="footer-links">
+                        <a href="#hero">Home Base</a>
+                        <a href="#basics">Core Philosophy</a>
+                        <a href="#products">Scent Collection</a>
+                        <a href="#testimonials">Reviews</a>
+                        <a href="#contact">Studio Address</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Products</h4>
+                    <div class="footer-links">
+                        <a href="#products">Fine Fragrances</a>
+                        <a href="#products">Aroma Essence Oils</a>
+                        <a href="#products">Home Diffusers</a>
+                        <a href="#products">Discovery Sample Boxes</a>
+                        <a href="#products">Gift Certificates</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Olfactive Chronicles</h4>
+                    <p class="newsletter-desc">Subscribe to unlock premium collection preview invites, scent care insights, and priority access to limited seasonal runs.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                        <button type="submit" class="newsletter-submit"><i class="fa-solid fa-arrow-right-long"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AURA Olfactive House. All rights reserved globally.</p>
+                <p>Designed for Ultimate Luxury | Butwal, Rupandehi, Nepal</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="drawer-overlay" id="global-overlay-backstop">
+        <div class="cart-drawer" id="cart-slideout-drawer" stop-propagation>
+            <div class="drawer-header">
+                <h3>Shopping Bag</h3>
+                <div class="drawer-close" id="cart-drawer-close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+
+            <div class="cart-items-body" id="cart-items-injection-target">
+                <div class="empty-cart-msg">Your shopping bag is currently empty.</div>
+            </div>
+
+            <div class="drawer-footer">
+                <div class="cart-subtotal-row">
+                    <span>Estimated Subtotal</span>
+                    <span id="cart-subtotal-display-value">Rs. 0</span>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 20px;">Taxes calculated directly upon confirmation checkout. Free local distribution inside Butwal.</p>
+                <button class="btn btn-primary" id="checkout-trigger-btn" style="width: 100%; text-align: center;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div
 
 
 
-
+Gemini is AI and can make mistakes.
 
