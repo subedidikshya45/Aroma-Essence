@@ -1,4 +1,3 @@
-HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -413,8 +412,1179 @@ HTML
             border: none;
             font-family: var(--font-sans);
             font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-gray);
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
 
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
 
+        .filter-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 30px; height: 2px;
+            background-color: var(--primary-gold);
+        }
 
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 3rem 2rem;
+        }
 
+        .product-card {
+            background-color: var(--light-beige);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
 
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px; left: 15px;
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .product-actions {
+            position: absolute;
+            bottom: -50px; left: 0; width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(255,255,255,0.9);
+            padding: 1rem 0;
+            transition: var(--transition-smooth);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .product-card:hover .product-actions {
+            bottom: 0;
+        }
+
+        .action-icon-btn {
+            background: none;
+            border: none;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin: 0 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .action-icon-btn:hover {
+            color: var(--primary-gold);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .product-price {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--primary-gold);
+        }
+
+        /* ==========================================================================
+           7. APPOINTMENT / DISCOVERY BAR
+           ========================================================================== */
+        .cta-banner {
+            background: linear-gradient(rgba(17,17,17,0.85), rgba(17,17,17,0.85)), url('https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding: 6rem 0;
+            color: var(--text-light);
+            text-center: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        /* ==========================================================================
+           8. TESTIMONIALS
+           ========================================================================== */
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .testimonial-slide {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .testimonial-author {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 8px; height: 8px;
+            background-color: var(--border-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .dot.active {
+            background-color: var(--primary-gold);
+            transform: scale(1.2);
+        }
+
+        /* ==========================================================================
+           9. CONTACT & LOCATION (BUTWAL)
+           ========================================================================== */
+        #contact {
+            background-color: #ffffff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info-panel {
+            padding-right: 2rem;
+        }
+
+        .contact-info-panel h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .contact-details {
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            margin-right: 1.5rem;
+            margin-top: 4px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .contact-form-wrapper h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--light-beige);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            background-color: #fff;
+        }
+
+        textarea.form-control {
+            resize: none;
+            height: 150px;
+        }
+
+        /* Map Embed Container */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ==========================================================================
+           10. INTERACTIVE SHOPPING CART MODAL
+           ========================================================================== */
+        .cart-modal {
+            position: fixed;
+            top: 0; right: -450px;
+            width: 450px; height: 100vh;
+            background-color: #ffffff;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem;
+        }
+
+        .cart-modal.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cart-header h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .close-cart {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .close-cart:hover { color: var(--primary-gold); }
+
+        .cart-items-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-item-img {
+            width: 70px; height: 70px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .cart-item-price {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .qty-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            width: 20px; height: 20px;
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer;
+        }
+
+        .remove-item {
+            color: var(--accent-maroon);
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .cart-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1999;
+            opacity: 0; pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* ==========================================================================
+           11. FOOTER
+           ========================================================================== */
+        footer {
+            background-color: var(--primary-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 5rem 0 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .footer-socials a {
+            display: inline-block;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.05);
+            color: var(--text-light);
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-socials a:hover {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-links-col h4 {
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-links-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links-col ul li a:hover {
+            color: var(--primary-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        /* ==========================================================================
+           12. KEYFRAME ANIMATIONS
+           ========================================================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==========================================================================
+           13. RESPONSIVE DESIGN (MEDIA QUERIES)
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            .img-main { height: 450px; }
+            .img-sub { margin-top: 100px; height: 320px; }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+            .hero-title { font-size: 4rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 80%; height: 100vh;
+                background-color: var(--secondary-dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 3rem;
+                transition: var(--transition-smooth);
+                z-index: 999;
+            }
+            .nav-menu.open { right: 0; }
+            .nav-link { color: var(--text-light); font-size: 1.1rem; }
+            .menu-toggle { display: block; }
+            header:not(.scrolled) .menu-toggle { color: var(--text-light); }
+            header.scrolled .menu-toggle { color: var(--text-light); }
+            .features-row { grid-template-columns: 1fr; }
+            .hero-title { font-size: 3rem; }
+            .cart-modal { width: 100%; right: -100%; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+    
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Selection</h3>
+            <i class="fa-solid var fa-xmark close-cart" id="closeCartBtn"></i>
+        </div>
+        <div class="cart-items-container" id="cartItemsContainer">
+            <p class="text-center" style="color: var(--text-gray); margin-top: 2rem;">Your sensory tray is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total Amount:</span>
+                <span id="cartTotalValue">Rs. 0</span>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="alert('Order Feature Integrated! Proceeding to aromatic packing.')">Secure Checkout</button>
+        </div>
+    </div>
+
+    <header id="mainHeader">
+        <div class="container nav-wrapper">
+            <a href="#home" class="logo">AURA<span>ESSENCE</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">The Brand</a>
+                <a href="#products" class="nav-link">Our Aromas</a>
+                <a href="#contact" class="nav-link">Find Us</a>
+            </nav>
+            <div class="nav-icons">
+                <i class="fa-solid fa-bag-shopping nav-icon" id="cartIcon">
+                    <span class="cart-count" id="cartCount">0</span>
+                </i>
+                <i class="fa-solid fa-bars menu-toggle" id="menuToggleBtn"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <p class="section-subtitle" style="color: var(--light-beige);">Artisan Distillations</p>
+                <h1 class="hero-title">Elevate Your <em>Personal</em> Atmosphere</h1>
+                <p class="hero-desc">Bespoke luxury perfumes and pure essential aromatic essences curated right in the heart of Butwal, Nepal.</p>
+                <a href="#products" class="btn btn-primary" style="background-color: var(--primary-gold); color: var(--primary-dark)">Discover the Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="img-main">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80" alt="Exquisite Glass Perfume Extraction">
+                    </div>
+                    <div class="img-sub">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80" alt="Pouring Essential Oils">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="section-subtitle">Since Inception</p>
+                    <h2 class="section-title">The Art of Pure Olfactory Alchemy</h2>
+                    <div class="divider" style="margin: 0 0 2rem 0;"></div>
+                    <p>At Aura Essence, we believe that a scent is more than an accessory—it is your silent signature, a timeless echo of your character. Established locally in Rupandehi, our collections are meticulously blended using the world's most elite botanicals alongside rare organic ingredients sourced sustainably from the high Himalayan ranges of Nepal.</p>
+                    <p>Every single drop represents hours of masterful craftsmanship, transitioning through precise notes of top, heart, and base layers to deliver unmatched longevity and deep cellular tranquility.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 1.5rem;">Book a Personal Scent Profile Consultation</a>
+                </div>
+            </div>
+
+            <div class="features-row">
+                <div class="feature-box">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Pure Extractions</h3>
+                    <p>No synthetic aldehydes or cheap fillers. Experience raw organic materials concentrated into high-potency aromatic absolute compounds.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-hourglass-start"></i>
+                    <h3>8+ Hour Longevity</h3>
+                    <p>Engineered for maximum skin-binding capabilities. Our Eau de Parfums boast over 20% oil volume concentration for sustained performance.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>Sustainably Blended</h3>
+                    <p>Completely cruelty-free and proudly crafted in Butwal utilizing eco-conscious packaging systems that protect nature's balance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-subtitle">Our Masterpieces</p>
+                <h2 class="section-title">The Signature Menu</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Aromas</button>
+                <button class="filter-btn" data-filter="perfume">Signature Perfumes</button>
+                <button class="filter-btn" data-filter="essence">Aroma Essences</button>
+            </div>
+
+            <div class="products-grid" id="productsDisplayGrid">
+                <div class="product-card" data-category="perfume">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Best Seller</span>
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80" alt="Imperial Oud Wood Perfume Bottle">
+                        <div class="product-actions">
+                            <button class="action-icon-btn add-to-cart-trigger" data-id="1" data-name="Imperial Oud Wood" data-price="4500" data-img="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-basket-shopping"></i> Add To Bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Eau De Parfum</p>
+                        <h3 class="product-title">Imperial Oud Wood</h3>
+                        <p class="product-price">Rs. 4,500</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="essence">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Organic</span>
+                        <img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=600&q=80" alt="Himalayan Lavender Essential Oil">
+                        <div class="product-actions">
+                            <button class="action-icon-btn add-to-cart-trigger" data-id="2" data-name="Himalayan Lavender Essence" data-price="1800" data-img="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-basket-shopping"></i> Add To Bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Pure Oil Extract</p>
+                        <h3 class="product-title">Himalayan Lavender</h3>
+                        <p class="product-price">Rs. 1,800</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="perfume">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80" alt="Mystic Rose Elixir Bottle">
+                        <div class="product-actions">
+                            <button class="action-icon-btn add-to-cart-trigger" data-id="3" data-name="Mystic Rose Elixir" data-price="3800" data-img="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-basket-shopping"></i> Add To Bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Eau De Parfum</p>
+                        <h3 class="product-title">Mystic Rose Elixir</h3>
+                        <p class="product-price">Rs. 3,800</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="essence">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Calming</span>
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80" alt="Santal Saffron Aroma Extract">
+                        <div class="product-actions">
+                            <button class="action-icon-btn add-to-cart-trigger" data-id="4" data-name="Santal Saffron Aroma" data-price="2400" data-img="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-basket-shopping"></i> Add To Bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Ambient Diffuser Oil</p>
+                        <h3 class="product-title">Santal Saffron Aroma</h3>
+                        <p class="product-price">Rs. 2,400</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="perfume">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80" alt="Citrus Vetiver Fresh Scent">
+                        <div class="product-actions">
+                            <button class="action-icon-btn add-to-cart-trigger" data-id="5" data-name="Citrus Vetiver Fresh" data-price="3200" data-img="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-basket-shopping"></i> Add To Bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Daywear Cologne</p>
+                        <h3 class="product-title">Citrus Vetiver Fresh</h3>
+                        <p class="product-price">Rs. 3,200</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="essence">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">New Arrival</span>
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80" alt="Wild Jasmine Therapeutic Essence">
+                        <div class="product-actions">
+                            <button class="action-icon-btn add-to-cart-trigger" data-id="6" data-name="Wild Jasmine Absolut" data-price="2100" data-img="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-basket-shopping"></i> Add To Bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Therapeutic Essence</p>
+                        <h3 class="product-title">Wild Jasmine Absolut</h3>
+                        <p class="product-price">Rs. 2,100</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <div class="container cta-content">
+            <h2>Experience Your Signature Scent In Person</h2>
+            <p style="margin-bottom: 2rem; letter-spacing: 1px; color: rgba(255,255,255,0.85)">Visit our concept store location in Milanchowk, Butwal for an intimate testing custom diagnostic map session.</p>
+            <a href="#contact" class="btn btn-primary" style="background-color: var(--primary-gold); color: var(--primary-dark)">View Direct Directions</a>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-subtitle">Verified Reviews</p>
+                <h2 class="section-title">Whispers of Admiration</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="testimonials-slider" id="testimonialSlider">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-quote">"The Imperial Oud Wood completely redefined my concept of lasting perfumes. I apply it in the morning, and even after navigating the humid afternoons of Butwal, the deep base notes linger wonderfully."</p>
+                    <span class="testimonial-author">Prashant Thapa, Butwal</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"Their Himalayan Lavender Essence transformed my meditation and sleep routines entirely. It smells incredibly pure, raw, and completely free from harsh alcohol layers."</p>
+                    <span class="testimonial-author">Anjali Shrestha, Rupandehi</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"Exceptional artisan quality right here in Nepal. The bottle designs match the beautiful, complex global quality of premium French fragrance houses!"</p>
+                    <span class="testimonial-author">Dr. Niraj Bhusal, Kathmandu</span>
+                </div>
+            </div>
+            <div class="slider-dots" id="sliderDotsContainer">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding" style="border-top: 1px solid var(--border-color)">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-panel">
+                    <p class="section-subtitle">Connect With Us</p>
+                    <h3>Visit Our Fragrance Lounge</h3>
+                    <div class="divider" style="margin: 0 0 2.5rem 0;"></div>
+                    <p style="color: var(--text-gray); margin-bottom: 2rem;">Have any custom scent orchestration requests or looking to stock our artisanal aroma essence line in your premium boutique? Contact our support team directly or pass by our experience gallery.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h4>Our Address</h4>
+                                <p>Milanchowk Ward-08, Butwal, Rupandehi, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h4>Direct Hotline Line</h4>
+                                <p><a href="tel:+9779857036578" style="color: var(--primary-gold); font-weight: 600;">+977 9857036578</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h4>Electronic Mail</h4>
+                                <p>info@auraessence.com.np</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3>Drop A Note</h3>
+                    <form id="contactForm" style="margin-top: 2.5rem;" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Aura Essence. We will call you within 24 hours!'); this.reset();">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Tell us your fragrance preferences or inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Transmit Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31625946467!2d83.43126935293679!3d27.693417743936637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996864275d14181%3A0xb30bfd500d2da312!2sButwal!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>AURA<span>ESSENCE</span></h3>
+                    <p>Crafting high-fidelity sensory transformations using sustainable botanical architecture extracted from the heartlands of Nepal.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Discover Menu</h4>
+                    <ul>
+                        <li><a href="#home">Home Base</a></li>
+                        <li><a href="#about">The Brand Story</a></li>
+                        <li><a href="#products">Aromatic Catalog</a></li>
+                        <li><a href="#contact">Contact Points</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>The Basics</h4>
+                    <ul>
+                        <li><a href="#">Scent Longevity Guide</a></li>
+                        <li><a href="#">Extraction Science</a></li>
+                        <li><a href="#">Custom Custom Blends</a></li>
+                        <li><a href="#">Return Matrix Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Operating Hub</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;">
+                        Milanchowk, Butwal<br>
+                        Rupandehi, Nepal<br><br>
+                        Mon - Sat: 09:00 AM - 08:00 PM<br>
+                        Sunday: Closed for Curations
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aura Essence Company. All Rights Reserved.</p>
+                <p>Designed locally in Butwal, Rupandehi, Nepal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- HEADER SCROLL ACTION HANDLING ---
+            const headerElement = document.getElementById('mainHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    headerElement.classList.add('scrolled');
+                } else {
+                    headerElement.classList.remove('scrolled');
+                }
+            });
+
+            // --- MOBILE MENU SIDE NAV DRAWER ---
+            const menuToggleBtn = document.getElementById('menuToggleBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggleBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('open');
+                // Toggle between bar icon and close icon smoothly
+                if(navMenu.classList.contains('open')) {
+                    menuToggleBtn.className = "fa-solid fa-xmark menu-toggle";
+                } else {
+                    menuToggleBtn.className = "fa-solid fa-bars menu-toggle";
+                }
+            });
+
+            // Close mobile menu immediately upon anchor selection links clickable
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('open');
+                    menuToggleBtn.className = "fa-solid fa-bars menu-toggle";
+                });
+            });
+
+            // --- INTERACTIVE PRODUCT FILTER SYSTEM ---
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Reset active states across elements
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const targetCategory = btn.getAttribute('data-filter');
+
+                    productCards.forEach(card => {
+                        if (targetCategory === 'all' || card.getAttribute('data-category') === targetCategory) {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 50);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => card.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+
+            // --- TESTIMONIAL AUTOMATED CAROUSEL SLIDER ---
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.dot');
+            let activeSlideIndex = 0;
+            let slideIntervalTimer;
+
+            function renderActiveSlide(index) {
+                slides.forEach(s => s.classList.remove('active'));
+                dots.forEach(d => d.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                activeSlideIndex = index;
+            }
+
+            function cycleNextSlide() {
+                let targetIndex = activeSlideIndex + 1;
+                if (targetIndex >= slides.length) targetIndex = 0;
+                renderActiveSlide(targetIndex);
+            }
+
+            function startSliderLifecycle() {
+                slideIntervalTimer = setInterval(cycleNextSlide, 6000); // Transitions automatically every 6 seconds
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideIntervalTimer);
+                    const selectedIdx = parseInt(dot.getAttribute('data-index'));
+                    renderActiveSlide(selectedIdx);
+                    startSliderLifecycle();
+                });
+            });
+
+            startSliderLifecycle();
+
+            // --- COMPREHENSIVE CLIENT-SIDE CART APPLICATION DATA STRUCTURING ---
+            let cartItemsData = [];
+            const cartModal = document.getElementById('cartModal');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const cartIcon = document.getElementById('cartIcon');
+            const closeCartBtn = document.getElementById('closeCartBtn');
+            const cartItemsContainer = document.getElementById('cartItemsContainer');
+            const cartCountBadge = document.getElementById('cartCount');
+            const cartTotalValueText = document.getElementById('cartTotalValue');
+
+            function toggleCartModalVisibility() {
+                cartModal.classList.toggle('open');
+                modalOverlay.classList.toggle('show');
+            }
+
+            cartIcon.addEventListener('click', toggleCartModalVisibility);
+            closeCartBtn.addEventListener('click', toggleCartModalVisibility);
+            modalOverlay.addEventListener('click', () => {
+                cartModal.classList.remove('open');
+                modalOverlay.classList.remove('show');
+            });
+
+            function renderCartViewUI() {
+                if (cartItemsData.length === 0) {
+                    cartItemsContainer.innerHTML = `<p class="text-center" style="color: var(--text-gray); margin-top: 2rem;">Your sensory tray is empty.</p>`;
+                    cartCountBadge.textContent = '0';
+                    cartTotalValueText.textContent = 'Rs. 0';
+                    return;
+                }
+
+                cartItemsContainer.innerHTML = '';
+                let aggregateCartPrice = 0;
+                let totalCartQuantity = 0;
+
+                cartItemsData.forEach(item => {
+                    aggregateCartPrice += (item.price * item.quantity);
+                    totalCartQuantity += item.quantity;
+
+                    const elementRowItem = document.createElement('div');
+                    elementRowItem.classList.add('cart-item');
+                    elementRowItem.innerHTML = `
+                        <img src="${item.img}" class="cart-item-img" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <h4 class="cart-item-title">${item.name}</h4>
+                            <div class="cart-item-price">Rs. ${item.price.toLocaleString()}</div>
+                            <div class="cart-item-qty">
+                                <button class="qty-btn reduce-qty-trigger" data-id="${item.id}">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="qty-btn expand-qty-trigger" data-id="${item.id}">+</button>
+                                <span class="remove-item remove-all-trigger" data-id="${item.id}" style="margin-left:auto;"><i class="fa-regular fa-trash-can"></i></span>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(elementRowItem);
+                });
+
+                cartCountBadge.textContent = totalCartQuantity;
+                cartTotalValueText.textContent = `Rs. ${aggregateCartPrice.toLocaleString()}`;
+                bindDynamicCartActionTriggers();
+            }
+
+            function addProductToCartPipeline(productId, productName, productPrice, productImage) {
+                const targetExistingItemIdx = cartItemsData.findIndex(item => item.id === productId);
+                
+                if (targetExistingItemIdx > -1) {
+                    cartItemsData[targetExistingItemIdx].quantity += 1;
+                } else {
+                    cartItemsData.push({
+                        id: productId,
+                        name: productName,
+                        price: parseInt(productPrice),
+                        img: productImage,
+                        quantity: 1
+                    });
+                }
+                renderCartViewUI();
+                // Auto expose the shopping bag when item appended
+                cartModal.classList.add('open');
+                modalOverlay.classList.add('show');
+            }
+
+            document.querySelectorAll('.add-to-cart-trigger').forEach(trigger => {
+                trigger.addEventListener('click', (event) => {
+                    const buttonElement = event.currentTarget;
+                    const id = buttonElement.getAttribute('data-id');
+                    const name = buttonElement.getAttribute('data-name');
+                    const price = buttonElement.getAttribute('data-price');
+                    const img = buttonElement.getAttribute('data-img');
+                    addProductToCartPipeline(id, name, price, img);
+                });
+            });
+
+            function bindDynamicCartActionTriggers() {
+                document.querySelectorAll('.expand-qty-trigger').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-id');
+                        const itemIdx = cartItemsData.findIndex(i => i.id === id);
+                        if (itemIdx > -1) {
+                            cartItemsData[itemIdx].quantity += 1;
+                            renderCartViewUI();
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.reduce-qty-trigger').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-id');
+                        const itemIdx = cartItemsData.findIndex(i => i.id === id);
+                        if (itemIdx > -1) {
+                            cartItemsData[itemIdx].quantity -= 1;
+                            if (cartItemsData[itemIdx].quantity <= 0) {
+                                cartItemsData.splice(itemIdx, 1);
+                            }
+                            renderCartViewUI();
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.remove-all-trigger').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-id');
+                        cartItemsData = cartItemsData.filter(i => i.id !== id);
+                        renderCartViewUI();
+                    });
+                });
+            }
+
+            // --- ACTIVE SCROLL LINK HIGHLIGHTING LOGIC ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let currentActiveSectionId = '';
+                sections.forEach(section => {
+                    const sectionTopDistance = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= (sectionTopDistance - sectionHeight / 3)) {
+                        currentActiveSectionId = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentActiveSectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
