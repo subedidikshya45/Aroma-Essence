@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
+ <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HFWBLCHYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-7HFWBLCHYR');
-</script>
+  gtag('config', 'G-7HFWBLCHYR'); 
+
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Essence | Luxury Perfumes & Aromas Butwal</title>
+    <title>Aroma Essence | Luxury Perfumes & Aromas Butwal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* ==========================================================================
-           1. DESIGN SYSTEM & VARIABLES
-           ========================================================================== */
         :root {
             --primary-gold: #c5a880;
             --primary-dark: #111111;
@@ -36,9 +33,6 @@
             --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* ==========================================================================
-           2. BASE RESET & UTILITIES
-           ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
@@ -64,15 +58,8 @@
             transition: var(--transition-smooth);
         }
 
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-            object-fit: cover;
-        }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; object-fit: cover; }
 
         .container {
             width: 100%;
@@ -81,13 +68,9 @@
             padding: 0 2rem;
         }
 
-        .section-padding {
-            padding: 8rem 0;
-        }
-
+        .section-padding { padding: 8rem 0; }
         .text-center { text-align: center; }
 
-        /* Typography Utilities */
         .section-title {
             font-family: var(--font-serif);
             font-size: 3.5rem;
@@ -115,7 +98,6 @@
             margin: 1.5rem auto;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 1rem 2.5rem;
@@ -131,11 +113,7 @@
             z-index: 1;
         }
 
-        .btn-primary {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-        }
-
+        .btn-primary { background-color: var(--primary-dark); color: var(--text-light); }
         .btn-primary::after {
             content: '';
             position: absolute;
@@ -144,30 +122,18 @@
             z-index: -1;
             transition: var(--transition-smooth);
         }
-
-        .btn-primary:hover::after {
-            width: 100%;
-        }
+        .btn-primary:hover::after { width: 100%; }
 
         .btn-outline {
             border: 1px solid var(--primary-dark);
             background: transparent;
             color: var(--primary-dark);
         }
+        .btn-outline:hover { background-color: var(--primary-dark); color: var(--text-light); }
 
-        .btn-outline:hover {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-        }
-
-        /* ==========================================================================
-           3. HEADER & NAVIGATION
-           ========================================================================== */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 0; left: 0; width: 100%;
             z-index: 1000;
             background-color: transparent;
             transition: var(--transition-smooth);
@@ -180,17 +146,9 @@
             border-bottom: 1px solid rgba(197, 168, 128, 0.2);
         }
 
-        header.scrolled .nav-link, 
-        header.scrolled .logo,
-        header.scrolled .nav-icon {
-            color: var(--text-light);
-        }
+        header.scrolled .nav-link, header.scrolled .logo, header.scrolled .nav-icon { color: var(--text-light); }
 
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
 
         .logo {
             font-family: var(--font-serif);
@@ -199,15 +157,9 @@
             letter-spacing: 3px;
             color: var(--primary-dark);
         }
+        .logo span { color: var(--primary-gold); }
 
-        .logo span {
-            color: var(--primary-gold);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 2.5rem;
-        }
+        .nav-menu { display: flex; gap: 2.5rem; }
 
         .nav-link {
             font-size: 0.85rem;
@@ -218,7 +170,6 @@
             position: relative;
             padding-bottom: 4px;
         }
-
         .nav-link::after {
             content: '';
             position: absolute;
@@ -226,51 +177,25 @@
             background-color: var(--primary-gold);
             transition: var(--transition-smooth);
         }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-icons {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-icon {
-            font-size: 1.2rem;
-            color: var(--primary-dark);
-            cursor: pointer;
-            position: relative;
-        }
+        .nav-icons { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-icon { font-size: 1.2rem; color: var(--primary-dark); cursor: pointer; position: relative; }
 
         .cart-count {
             position: absolute;
-            top: -8px;
-            right: -10px;
+            top: -8px; right: -10px;
             background-color: var(--primary-gold);
             color: var(--primary-dark);
             font-size: 0.7rem;
-            width: 16px;
-            height: 16px;
+            width: 16px; height: 16px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex; justify-content: center; align-items: center;
             font-weight: 600;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            cursor: pointer;
-        }
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; }
 
-        /* ==========================================================================
-           4. HERO SECTION
-           ========================================================================== */
         #home {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
@@ -281,19 +206,12 @@
             position: relative;
         }
 
-        /* Fix visibility for top menu on load before scroll */
         header:not(.scrolled) .nav-link,
         header:not(.scrolled) .logo,
         header:not(.scrolled) .nav-icon,
-        header:not(.scrolled) .menu-toggle {
-            color: var(--text-light);
-        }
+        header:not(.scrolled) .menu-toggle { color: var(--text-light); }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeInUp 1.5s ease;
-        }
+        .hero-content { max-width: 800px; margin: 0 auto; animation: fadeInUp 1.5s ease; }
 
         .hero-title {
             font-family: var(--font-serif);
@@ -303,11 +221,7 @@
             margin-bottom: 1.5rem;
             letter-spacing: 4px;
         }
-
-        .hero-title em {
-            font-style: italic;
-            color: var(--primary-gold);
-        }
+        .hero-title em { font-style: italic; color: var(--primary-gold); }
 
         .hero-desc {
             font-size: 1.1rem;
@@ -317,25 +231,11 @@
             color: rgba(255,255,255,0.85);
         }
 
-        /* ==========================================================================
-           5. ABOUT & ESSENTIALS
-           ========================================================================== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .about-images {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .about-images { position: relative; display: grid; grid-template-columns: repeat(12, 1fr); }
 
         .img-main {
-            grid-column: 1 / span 10;
-            grid-row: 1;
+            grid-column: 1 / span 10; grid-row: 1;
             height: 550px;
             border: 1px solid var(--primary-gold);
             padding: 15px;
@@ -343,8 +243,7 @@
         }
 
         .img-sub {
-            grid-column: 6 / -1;
-            grid-row: 1;
+            grid-column: 6 / -1; grid-row: 1;
             margin-top: 150px;
             height: 400px;
             z-index: 2;
@@ -352,23 +251,10 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .about-text {
-            padding-right: 2rem;
-        }
+        .about-text { padding-right: 2rem; }
+        .about-text p { color: var(--text-gray); margin-bottom: 1.5rem; font-size: 1rem; text-align: justify; }
 
-        .about-text p {
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            text-align: justify;
-        }
-
-        .features-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-        }
+        .features-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
 
         .feature-box {
             background-color: #ffffff;
@@ -377,48 +263,17 @@
             border: 1px solid var(--border-color);
             transition: var(--transition-smooth);
         }
+        .feature-box:hover { transform: translateY(-10px); border-color: var(--primary-gold); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .feature-box i { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 1.5rem; }
+        .feature-box h3 { font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem; font-weight: 500; }
+        .feature-box p { font-size: 0.9rem; color: var(--text-gray); }
 
-        .feature-box:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
+        #products { background-color: #ffffff; }
 
-        .feature-box i {
-            font-size: 2.5rem;
-            color: var(--primary-gold);
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-box h3 {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .feature-box p {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-
-        /* ==========================================================================
-           6. PRODUCTS CATALOGUE
-           ========================================================================== */
-        #products {
-            background-color: #ffffff;
-        }
-
-        .filter-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
+        .filter-container { display: flex; justify-content: center; gap: 2rem; margin-bottom: 4rem; }
 
         .filter-btn {
-            background: none;
-            border: none;
+            background: none; border: none;
             font-family: var(--font-sans);
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -429,12 +284,7 @@
             position: relative;
             transition: var(--transition-smooth);
         }
-
-        .filter-btn.active, .filter-btn:hover {
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-
+        .filter-btn.active, .filter-btn:hover { color: var(--primary-dark); font-weight: 600; }
         .filter-btn.active::after {
             content: '';
             position: absolute;
@@ -443,11 +293,7 @@
             background-color: var(--primary-gold);
         }
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 3rem 2rem;
-        }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 3rem 2rem; }
 
         .product-card {
             background-color: var(--light-beige);
@@ -456,28 +302,11 @@
             transition: var(--transition-smooth);
             position: relative;
         }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-
-        .product-img-wrapper {
-            position: relative;
-            height: 380px;
-            overflow: hidden;
-            background-color: #fff;
-        }
-
-        .product-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .product-card:hover .product-img-wrapper img {
-            transform: scale(1.1);
-        }
+        .product-img-wrapper { position: relative; height: 380px; overflow: hidden; background-color: #fff; }
+        .product-img-wrapper img { width: 100%; height: 100%; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+        .product-card:hover .product-img-wrapper img { transform: scale(1.1); }
 
         .product-badge {
             position: absolute;
@@ -501,85 +330,33 @@
             transition: var(--transition-smooth);
             border-top: 1px solid var(--border-color);
         }
-
-        .product-card:hover .product-actions {
-            bottom: 0;
-        }
+        .product-card:hover .product-actions { bottom: 0; }
 
         .action-icon-btn {
-            background: none;
-            border: none;
+            background: none; border: none;
             color: var(--primary-dark);
             font-size: 1.1rem;
             cursor: pointer;
             margin: 0 1rem;
             transition: var(--transition-smooth);
         }
+        .action-icon-btn:hover { color: var(--primary-gold); }
 
-        .action-icon-btn:hover {
-            color: var(--primary-gold);
-        }
+        .product-info { padding: 1.5rem; text-align: center; }
+        .product-category { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-gray); margin-bottom: 0.5rem; }
+        .product-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--primary-dark); }
+        .product-price { font-size: 1rem; font-weight: 500; color: var(--primary-gold); }
 
-        .product-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .product-category {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-gray);
-            margin-bottom: 0.5rem;
-        }
-
-        .product-title {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: var(--primary-dark);
-        }
-
-        .product-price {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--primary-gold);
-        }
-
-        /* ==========================================================================
-           7. APPOINTMENT / DISCOVERY BAR
-           ========================================================================== */
         .cta-banner {
             background: linear-gradient(rgba(17,17,17,0.85), rgba(17,17,17,0.85)), url('https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             padding: 6rem 0;
             color: var(--text-light);
-            text-center: center;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
             text-align: center;
         }
+        .cta-content { max-width: 700px; margin: 0 auto; text-align: center; }
+        .cta-content h2 { font-family: var(--font-serif); font-size: 3rem; margin-bottom: 1.5rem; font-weight: 400; }
 
-        .cta-content h2 {
-            font-family: var(--font-serif);
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        /* ==========================================================================
-           8. TESTIMONIALS
-           ========================================================================== */
-        .testimonials-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            height: 300px;
-        }
+        .testimonials-slider { max-width: 800px; margin: 0 auto; position: relative; overflow: hidden; height: 300px; }
 
         .testimonial-slide {
             position: absolute;
@@ -592,11 +369,7 @@
             justify-content: center;
             align-items: center;
         }
-
-        .testimonial-slide.active {
-            opacity: 1;
-            position: relative;
-        }
+        .testimonial-slide.active { opacity: 1; position: relative; }
 
         .testimonial-quote {
             font-family: var(--font-serif);
@@ -606,100 +379,24 @@
             margin-bottom: 1.5rem;
             font-weight: 300;
         }
+        .testimonial-author { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: var(--primary-gold); font-weight: 600; }
 
-        .testimonial-author {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--primary-gold);
-            font-weight: 600;
-        }
+        .slider-dots { display: flex; justify-content: center; gap: 10px; margin-top: 2rem; }
+        .dot { width: 8px; height: 8px; background-color: var(--border-color); border-radius: 50%; cursor: pointer; transition: var(--transition-smooth); }
+        .dot.active { background-color: var(--primary-gold); transform: scale(1.2); }
 
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 2rem;
-        }
+        #contact { background-color: #ffffff; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-info-panel { padding-right: 2rem; }
+        .contact-info-panel h3 { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem; font-weight: 500; }
+        .contact-details { margin-bottom: 3rem; }
+        .contact-item { display: flex; align-items: flex-start; margin-bottom: 2rem; }
+        .contact-item i { font-size: 1.3rem; color: var(--primary-gold); margin-right: 1.5rem; margin-top: 4px; width: 25px; text-align: center; }
+        .contact-item h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .contact-item p { color: var(--text-gray); font-size: 0.95rem; }
 
-        .dot {
-            width: 8px; height: 8px;
-            background-color: var(--border-color);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .dot.active {
-            background-color: var(--primary-gold);
-            transform: scale(1.2);
-        }
-
-        /* ==========================================================================
-           9. CONTACT & LOCATION (BUTWAL)
-           ========================================================================== */
-        #contact {
-            background-color: #ffffff;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info-panel {
-            padding-right: 2rem;
-        }
-
-        .contact-info-panel h3 {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .contact-details {
-            margin-bottom: 3rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-        }
-
-        .contact-item i {
-            font-size: 1.3rem;
-            color: var(--primary-gold);
-            margin-right: 1.5rem;
-            margin-top: 4px;
-            width: 25px;
-            text-align: center;
-        }
-
-        .contact-item h4 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-item p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        .contact-form-wrapper h3 {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+        .contact-form-wrapper h3 { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem; font-weight: 500; }
+        .form-group { margin-bottom: 1.5rem; }
 
         .form-control {
             width: 100%;
@@ -710,35 +407,12 @@
             font-size: 0.9rem;
             transition: var(--transition-smooth);
         }
+        .form-control:focus { outline: none; border-color: var(--primary-gold); background-color: #fff; }
+        textarea.form-control { resize: none; height: 150px; }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-gold);
-            background-color: #fff;
-        }
+        .map-container { width: 100%; height: 400px; margin-top: 4rem; border: 1px solid var(--border-color); }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
 
-        textarea.form-control {
-            resize: none;
-            height: 150px;
-        }
-
-        /* Map Embed Container */
-        .map-container {
-            width: 100%;
-            height: 400px;
-            margin-top: 4rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* ==========================================================================
-           10. INTERACTIVE SHOPPING CART MODAL
-           ========================================================================== */
         .cart-modal {
             position: fixed;
             top: 0; right: -450px;
@@ -751,105 +425,25 @@
             flex-direction: column;
             padding: 2.5rem;
         }
+        .cart-modal.open { right: 0; }
 
-        .cart-modal.open {
-            right: 0;
-        }
-
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cart-header h3 {
-            font-family: var(--font-serif);
-            font-size: 1.8rem;
-            font-weight: 500;
-        }
-
-        .close-cart {
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
+        .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+        .cart-header h3 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 500; }
+        .close-cart { font-size: 1.5rem; cursor: pointer; transition: var(--transition-smooth); }
         .close-cart:hover { color: var(--primary-gold); }
 
-        .cart-items-container {
-            flex-grow: 1;
-            overflow-y: auto;
-            margin-bottom: 1.5rem;
-        }
+        .cart-items-container { flex-grow: 1; overflow-y: auto; margin-bottom: 1.5rem; }
+        .cart-item { display: flex; align-items: center; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+        .cart-item-img { width: 70px; height: 70px; object-fit: cover; border: 1px solid var(--border-color); }
+        .cart-item-info { flex-grow: 1; }
+        .cart-item-title { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .cart-item-price { color: var(--primary-gold); font-size: 0.9rem; font-weight: 500; }
+        .cart-item-qty { display: flex; align-items: center; gap: 10px; margin-top: 0.5rem; font-size: 0.8rem; }
+        .qty-btn { background: none; border: 1px solid var(--border-color); width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+        .remove-item { color: var(--accent-maroon); cursor: pointer; font-size: 0.85rem; }
 
-        .cart-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .cart-item-img {
-            width: 70px; height: 70px;
-            object-fit: cover;
-            border: 1px solid var(--border-color);
-        }
-
-        .cart-item-info {
-            flex-grow: 1;
-        }
-
-        .cart-item-title {
-            font-family: var(--font-serif);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-
-        .cart-item-price {
-            color: var(--primary-gold);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .cart-item-qty {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 0.5rem;
-            font-size: 0.8rem;
-        }
-
-        .qty-btn {
-            background: none;
-            border: 1px solid var(--border-color);
-            width: 20px; height: 20px;
-            display: flex; justify-content: center; align-items: center;
-            cursor: pointer;
-        }
-
-        .remove-item {
-            color: var(--accent-maroon);
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-
-        .cart-footer {
-            border-top: 1px solid var(--border-color);
-            padding-top: 1.5rem;
-        }
-
-        .cart-total-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
+        .cart-footer { border-top: 1px solid var(--border-color); padding-top: 1.5rem; }
+        .cart-total-row { display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; }
 
         .modal-overlay {
             position: fixed;
@@ -859,41 +453,12 @@
             opacity: 0; pointer-events: none;
             transition: var(--transition-smooth);
         }
+        .modal-overlay.show { opacity: 1; pointer-events: auto; }
 
-        .modal-overlay.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        /* ==========================================================================
-           11. FOOTER
-           ========================================================================== */
-        footer {
-            background-color: var(--primary-dark);
-            color: rgba(255,255,255,0.7);
-            padding: 5rem 0 2rem 0;
-            font-size: 0.9rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-brand h3 {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-
-        .footer-brand p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
+        footer { background-color: var(--primary-dark); color: rgba(255,255,255,0.7); padding: 5rem 0 2rem 0; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+        .footer-brand h3 { font-family: var(--font-serif); font-size: 2rem; color: var(--text-light); margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .footer-brand p { margin-bottom: 1.5rem; line-height: 1.8; }
 
         .footer-socials a {
             display: inline-block;
@@ -906,69 +471,24 @@
             margin-right: 10px;
             transition: var(--transition-smooth);
         }
+        .footer-socials a:hover { background-color: var(--primary-gold); color: var(--primary-dark); transform: translateY(-3px); }
 
-        .footer-socials a:hover {
-            background-color: var(--primary-gold);
-            color: var(--primary-dark);
-            transform: translateY(-3px);
-        }
+        .footer-links-col h4 { color: var(--text-light); font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 1.5rem; position: relative; }
+        .footer-links-col ul li { margin-bottom: 0.8rem; }
+        .footer-links-col ul li a:hover { color: var(--primary-gold); padding-left: 5px; }
 
-        .footer-links-col h4 {
-            color: var(--text-light);
-            font-family: var(--font-sans);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
 
-        .footer-links-col ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links-col ul li a:hover {
-            color: var(--primary-gold);
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-        }
-
-        /* ==========================================================================
-           12. KEYFRAME ANIMATIONS
-           ========================================================================== */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ==========================================================================
-           13. RESPONSIVE DESIGN (MEDIA QUERIES)
-           ========================================================================== */
         @media (max-width: 1024px) {
-            .about-grid, .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-            }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
             .img-main { height: 450px; }
             .img-sub { margin-top: 100px; height: 320px; }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-            }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
             .hero-title { font-size: 4rem; }
         }
 
@@ -1005,23 +525,23 @@
     <div class="cart-modal" id="cartModal">
         <div class="cart-header">
             <h3>Your Selection</h3>
-            <i class="fa-solid var fa-xmark close-cart" id="closeCartBtn"></i>
+            <i class="fa-solid fa-xmark close-cart" id="closeCartBtn"></i>
         </div>
         <div class="cart-items-container" id="cartItemsContainer">
-            <p class="text-center" style="color: var(--text-gray); margin-top: 2rem;">Your sensory tray is empty.</p>
+            <p class="text-center" style="color: var(--text-gray); margin-top: 2rem;">Your cart is empty.</p>
         </div>
         <div class="cart-footer">
             <div class="cart-total-row">
                 <span>Total Amount:</span>
                 <span id="cartTotalValue">Rs. 0</span>
             </div>
-            <button class="btn btn-primary" style="width: 100%;" onclick="alert('Order Feature Integrated! Proceeding to aromatic packing.')">Secure Checkout</button>
+            <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you for your order. We will begin preparing it shortly.')">Secure Checkout</button>
         </div>
     </div>
 
     <header id="mainHeader">
         <div class="container nav-wrapper">
-            <a href="#home" class="logo">AURA<span>ESSENCE</span></a>
+            <a href="#home" class="logo">AROMA<span>ESSENCE</span></a>
             <nav class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">The Brand</a>
@@ -1042,7 +562,7 @@
             <div class="hero-content">
                 <p class="section-subtitle" style="color: var(--light-beige);">Artisan Distillations</p>
                 <h1 class="hero-title">Elevate Your <em>Personal</em> Atmosphere</h1>
-                <p class="hero-desc">Bespoke luxury perfumes and pure essential aromatic essences curated right in the heart of Butwal, Nepal.</p>
+                <p class="hero-desc">Bespoke luxury perfumes and pure essential aromatic essences, curated in the heart of Butwal, Nepal.</p>
                 <a href="#products" class="btn btn-primary" style="background-color: var(--primary-gold); color: var(--primary-dark)">Discover the Collection</a>
             </div>
         </div>
@@ -1061,11 +581,11 @@
                 </div>
                 <div class="about-text">
                     <p class="section-subtitle">Since Inception</p>
-                    <h2 class="section-title">The Art of Pure Olfactory Alchemy</h2>
+                    <h2 class="section-title">The Art of Fine Fragrance</h2>
                     <div class="divider" style="margin: 0 0 2rem 0;"></div>
-                    <p>At Aura Essence, we believe that a scent is more than an accessory—it is your silent signature, a timeless echo of your character. Established locally in Rupandehi, our collections are meticulously blended using the world's most elite botanicals alongside rare organic ingredients sourced sustainably from the high Himalayan ranges of Nepal.</p>
-                    <p>Every single drop represents hours of masterful craftsmanship, transitioning through precise notes of top, heart, and base layers to deliver unmatched longevity and deep cellular tranquility.</p>
-                    <a href="#contact" class="btn btn-outline" style="margin-top: 1.5rem;">Book a Personal Scent Profile Consultation</a>
+                    <p>At Aroma Essence, we believe a scent is more than an accessory - it is a personal signature. Our collections are carefully blended using premium botanicals alongside rare organic ingredients, sourced sustainably from the Himalayan ranges of Nepal.</p>
+                    <p>Every bottle reflects careful craftsmanship, layering precise top, heart, and base notes to deliver lasting quality with every wear.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 1.5rem;">Book a Personal Scent Consultation</a>
                 </div>
             </div>
 
@@ -1073,17 +593,17 @@
                 <div class="feature-box">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
                     <h3>Pure Extractions</h3>
-                    <p>No synthetic aldehydes or cheap fillers. Experience raw organic materials concentrated into high-potency aromatic absolute compounds.</p>
+                    <p>No synthetic fillers. Our fragrances are built from raw, organic materials concentrated into high-quality aromatic compounds.</p>
                 </div>
                 <div class="feature-box">
                     <i class="fa-solid fa-hourglass-start"></i>
                     <h3>8+ Hour Longevity</h3>
-                    <p>Engineered for maximum skin-binding capabilities. Our Eau de Parfums boast over 20% oil volume concentration for sustained performance.</p>
+                    <p>Formulated for lasting performance, with over 20% oil concentration in every Eau de Parfum.</p>
                 </div>
                 <div class="feature-box">
                     <i class="fa-solid fa-leaf"></i>
                     <h3>Sustainably Blended</h3>
-                    <p>Completely cruelty-free and proudly crafted in Butwal utilizing eco-conscious packaging systems that protect nature's balance.</p>
+                    <p>Cruelty-free and proudly crafted in Butwal, using eco-conscious packaging at every step.</p>
                 </div>
             </div>
         </div>
@@ -1092,7 +612,7 @@
     <section id="products" class="section-padding">
         <div class="container">
             <div class="text-center">
-                <p class="section-subtitle">Our Masterpieces</p>
+                <p class="section-subtitle">Our Collection</p>
                 <h2 class="section-title">The Signature Menu</h2>
                 <div class="divider"></div>
             </div>
@@ -1210,8 +730,8 @@
     <div class="cta-banner">
         <div class="container cta-content">
             <h2>Experience Your Signature Scent In Person</h2>
-            <p style="margin-bottom: 2rem; letter-spacing: 1px; color: rgba(255,255,255,0.85)">Visit our concept store location in Milanchowk, Butwal for an intimate testing custom diagnostic map session.</p>
-            <a href="#contact" class="btn btn-primary" style="background-color: var(--primary-gold); color: var(--primary-dark)">View Direct Directions</a>
+            <p style="margin-bottom: 2rem; letter-spacing: 1px; color: rgba(255,255,255,0.85)">Visit our concept store in Milanchowk, Butwal for a personal fragrance consultation.</p>
+            <a href="#contact" class="btn btn-primary" style="background-color: var(--primary-gold); color: var(--primary-dark)">Get Directions</a>
         </div>
     </div>
 
@@ -1219,21 +739,21 @@
         <div class="container">
             <div class="text-center">
                 <p class="section-subtitle">Verified Reviews</p>
-                <h2 class="section-title">Whispers of Admiration</h2>
+                <h2 class="section-title">What Our Customers Say</h2>
                 <div class="divider"></div>
             </div>
             
             <div class="testimonials-slider" id="testimonialSlider">
                 <div class="testimonial-slide active">
-                    <p class="testimonial-quote">"The Imperial Oud Wood completely redefined my concept of lasting perfumes. I apply it in the morning, and even after navigating the humid afternoons of Butwal, the deep base notes linger wonderfully."</p>
+                    <p class="testimonial-quote">"The Imperial Oud Wood completely changed how I think about lasting perfumes. Even through humid Butwal afternoons, the base notes hold up beautifully."</p>
                     <span class="testimonial-author">Prashant Thapa, Butwal</span>
                 </div>
                 <div class="testimonial-slide">
-                    <p class="testimonial-quote">"Their Himalayan Lavender Essence transformed my meditation and sleep routines entirely. It smells incredibly pure, raw, and completely free from harsh alcohol layers."</p>
+                    <p class="testimonial-quote">"The Himalayan Lavender Essence has become part of my nightly routine. It smells pure and natural, with none of the harsh alcohol notes I've noticed elsewhere."</p>
                     <span class="testimonial-author">Anjali Shrestha, Rupandehi</span>
                 </div>
                 <div class="testimonial-slide">
-                    <p class="testimonial-quote">"Exceptional artisan quality right here in Nepal. The bottle designs match the beautiful, complex global quality of premium French fragrance houses!"</p>
+                    <p class="testimonial-quote">"Genuinely impressive craftsmanship from a Nepal-based house. The bottles and blends hold their own against established international brands."</p>
                     <span class="testimonial-author">Dr. Niraj Bhusal, Kathmandu</span>
                 </div>
             </div>
@@ -1252,7 +772,7 @@
                     <p class="section-subtitle">Connect With Us</p>
                     <h3>Visit Our Fragrance Lounge</h3>
                     <div class="divider" style="margin: 0 0 2.5rem 0;"></div>
-                    <p style="color: var(--text-gray); margin-bottom: 2rem;">Have any custom scent orchestration requests or looking to stock our artisanal aroma essence line in your premium boutique? Contact our support team directly or pass by our experience gallery.</p>
+                    <p style="color: var(--text-gray); margin-bottom: 2rem;">Interested in a custom scent, or looking to stock our aroma essence line in your boutique? Reach out to our team directly or visit our showroom.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
@@ -1265,23 +785,23 @@
                         <div class="contact-item">
                             <i class="fa-solid fa-phone"></i>
                             <div>
-                                <h4>Direct Hotline Line</h4>
-                                <p><a href="tel:+9779857036578" style="color: var(--primary-gold); font-weight: 600;">+977 9857036578</a></p>
+                                <h4>Contact Number</h4>
+                                <p><a href="tel:+9779800000000" style="color: var(--primary-gold); font-weight: 600;">+977 9800000000</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-envelope"></i>
                             <div>
-                                <h4>Electronic Mail</h4>
-                                <p>info@auraessence.com.np</p>
+                                <h4>Email</h4>
+                                <p>info@aromaessence.com.np</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form-wrapper">
-                    <h3>Drop A Note</h3>
-                    <form id="contactForm" style="margin-top: 2.5rem;" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Aura Essence. We will call you within 24 hours!'); this.reset();">
+                    <h3>Send Us A Message</h3>
+                    <form id="contactForm" style="margin-top: 2.5rem;" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Aroma Essence. We will get back to you within 24 hours.'); this.reset();">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Your Full Name" required>
                         </div>
@@ -1291,7 +811,7 @@
                         <div class="form-group">
                             <textarea class="form-control" placeholder="Tell us your fragrance preferences or inquiry..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Transmit Message</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1306,8 +826,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>AURA<span>ESSENCE</span></h3>
-                    <p>Crafting high-fidelity sensory transformations using sustainable botanical architecture extracted from the heartlands of Nepal.</p>
+                    <h3>AROMA<span>ESSENCE</span></h3>
+                    <p>Crafting fine fragrances using sustainably sourced botanicals from the heartlands of Nepal.</p>
                     <div class="footer-socials">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -1315,35 +835,35 @@
                     </div>
                 </div>
                 <div class="footer-links-col">
-                    <h4>Discover Menu</h4>
+                    <h4>Discover</h4>
                     <ul>
-                        <li><a href="#home">Home Base</a></li>
+                        <li><a href="#home">Home</a></li>
                         <li><a href="#about">The Brand Story</a></li>
-                        <li><a href="#products">Aromatic Catalog</a></li>
-                        <li><a href="#contact">Contact Points</a></li>
+                        <li><a href="#products">Our Collection</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-links-col">
-                    <h4>The Basics</h4>
+                    <h4>Resources</h4>
                     <ul>
                         <li><a href="#">Scent Longevity Guide</a></li>
-                        <li><a href="#">Extraction Science</a></li>
-                        <li><a href="#">Custom Custom Blends</a></li>
-                        <li><a href="#">Return Matrix Policy</a></li>
+                        <li><a href="#">Extraction Process</a></li>
+                        <li><a href="#">Custom Blends</a></li>
+                        <li><a href="#">Return Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-links-col">
-                    <h4>Operating Hub</h4>
+                    <h4>Store Hours</h4>
                     <p style="font-size: 0.85rem; line-height: 1.8;">
                         Milanchowk, Butwal<br>
                         Rupandehi, Nepal<br><br>
                         Mon - Sat: 09:00 AM - 08:00 PM<br>
-                        Sunday: Closed for Curations
+                        Sunday: Closed
                     </p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Aura Essence Company. All Rights Reserved.</p>
+                <p>&copy; 2026 Aroma Essence. All Rights Reserved.</p>
                 <p>Designed locally in Butwal, Rupandehi, Nepal.</p>
             </div>
         </div>
@@ -1352,7 +872,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // --- HEADER SCROLL ACTION HANDLING ---
             const headerElement = document.getElementById('mainHeader');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -1362,13 +881,11 @@
                 }
             });
 
-            // --- MOBILE MENU SIDE NAV DRAWER ---
             const menuToggleBtn = document.getElementById('menuToggleBtn');
             const navMenu = document.getElementById('navMenu');
             
             menuToggleBtn.addEventListener('click', () => {
                 navMenu.classList.toggle('open');
-                // Toggle between bar icon and close icon smoothly
                 if(navMenu.classList.contains('open')) {
                     menuToggleBtn.className = "fa-solid fa-xmark menu-toggle";
                 } else {
@@ -1376,7 +893,6 @@
                 }
             });
 
-            // Close mobile menu immediately upon anchor selection links clickable
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('open');
@@ -1384,13 +900,11 @@
                 });
             });
 
-            // --- INTERACTIVE PRODUCT FILTER SYSTEM ---
             const filterButtons = document.querySelectorAll('.filter-btn');
             const productCards = document.querySelectorAll('.product-card');
 
             filterButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Reset active states across elements
                     filterButtons.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
@@ -1408,7 +922,6 @@
                 });
             });
 
-            // --- TESTIMONIAL AUTOMATED CAROUSEL SLIDER ---
             const slides = document.querySelectorAll('.testimonial-slide');
             const dots = document.querySelectorAll('.dot');
             let activeSlideIndex = 0;
@@ -1430,7 +943,7 @@
             }
 
             function startSliderLifecycle() {
-                slideIntervalTimer = setInterval(cycleNextSlide, 6000); // Transitions automatically every 6 seconds
+                slideIntervalTimer = setInterval(cycleNextSlide, 6000);
             }
 
             dots.forEach(dot => {
@@ -1444,7 +957,6 @@
 
             startSliderLifecycle();
 
-            // --- COMPREHENSIVE CLIENT-SIDE CART APPLICATION DATA STRUCTURING ---
             let cartItemsData = [];
             const cartModal = document.getElementById('cartModal');
             const modalOverlay = document.getElementById('modalOverlay');
@@ -1468,7 +980,7 @@
 
             function renderCartViewUI() {
                 if (cartItemsData.length === 0) {
-                    cartItemsContainer.innerHTML = `<p class="text-center" style="color: var(--text-gray); margin-top: 2rem;">Your sensory tray is empty.</p>`;
+                    cartItemsContainer.innerHTML = `<p class="text-center" style="color: var(--text-gray); margin-top: 2rem;">Your cart is empty.</p>`;
                     cartCountBadge.textContent = '0';
                     cartTotalValueText.textContent = 'Rs. 0';
                     return;
@@ -1520,7 +1032,6 @@
                     });
                 }
                 renderCartViewUI();
-                // Auto expose the shopping bag when item appended
                 cartModal.classList.add('open');
                 modalOverlay.classList.add('show');
             }
@@ -1571,7 +1082,6 @@
                 });
             }
 
-            // --- ACTIVE SCROLL LINK HIGHLIGHTING LOGIC ---
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
 
